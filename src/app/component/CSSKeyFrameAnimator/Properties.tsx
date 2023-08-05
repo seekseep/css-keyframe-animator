@@ -23,15 +23,12 @@ type FormValues = Omit<AnimationVariables, '_key'>
 const Properties:FC<ViewProps> = (props) => {
   const theme = useTheme()
   const {
-    update
+    update,
+    duration, keyframes, timingFunction
   } = useAnimatorContext()
 
   const { handleSubmit, register } = useForm<FormValues>({
-    defaultValues: {
-      duration: ANIMATION_DURATION.MEDIUM,
-      keyframes: ANIMATION_KEY_FRAMES.ROTATE,
-      timingFunction: ANIMATION_TIMING_FUNCTION.EASE,
-    }
+    defaultValues: { duration, keyframes, timingFunction }
   })
 
   return (
